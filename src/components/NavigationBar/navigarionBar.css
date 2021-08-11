@@ -1,0 +1,31 @@
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+svg #Path_6,
+svg #Line_6,
+svg #Line_7 {
+  fill: #fff;
+}
+
+#icon1 {
+  position: relative;
+  z-index: 1;
+}
+
+.border-radius-left {
+  border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.border-radius-right {
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+
+.btn-outline-success {
+  border: 2px solid !important;
+}
+
+.btn-outline-success:hover {
+  border-color: #198754 !important;
+  border: 2px solid #198754 !important;
+}
