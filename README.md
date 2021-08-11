@@ -16,4 +16,4 @@ The features will be available in the future
 
 ## Web url: 
 
-url: https://test-blog-est-rouge.netlifyapp.com
+url: https://test-blog-est-rouge.netlify,app
