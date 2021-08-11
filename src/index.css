@@ -13,6 +13,11 @@ body {
   box-sizing: border-box;
 }
 
+button,
+input {
+  outline: none;
+}
+
 html,
 body,
 div,
@@ -48,3 +53,15 @@ button {
 
 /* Pagination CSS */
 @import url('./components/PaginationBar/paginationBar.css');
+
+/* HomePage CSS */
+@import url('./pages/HomePage/homePage.css');
+
+/* Footer CSS */
+@import url('./components/Footer/footer.css');
+
+/* Article detail css */
+@import url('./pages/ArticleDetail/articleDetail.css');
+
+/* Loading CSS */
+@import url('./components/Loading/loading.css');

@@ -1,0 +1,150 @@
+.home-page {
+  background: #f9f9f9;
+}
+
+.react-slice {
+  width: 100%;
+  height: 40vh;
+  background: blue;
+}
+
+.col-open {
+  display: none;
+}
+
+.row {
+  justify-content: center !important;
+}
+
+.card-item {
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px #ccc;
+}
+
+.card-item:hover {
+  box-shadow: 0 7px 15px #ccc;
+}
+
+.card-item > img {
+  margin-right: 20px;
+}
+
+.card-item > .media-body {
+  width: calc(100% - 120px);
+  height: 120px;
+  padding: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.card-item > .media-body > .createAt {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.media-body > .text-transform {
+  text-transform: capitalize;
+}
+
+.media-body > a {
+  text-decoration: none;
+  color: black;
+}
+
+.col-hidden {
+  position: relative;
+  padding: 20px;
+}
+
+.col-open > .sidebar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.col-open > .sidebar > ul {
+  width: 300px;
+}
+
+.sidebar > .list-group {
+  border-radius: 0.25rem !important;
+  box-shadow: 0 5px 10px #ccc;
+}
+
+.col-hidden > .sidebar > ul > button {
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.col-hidden > .sidebar > ul > .list-group-item:hover {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.list-group-title {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding-left: 20px !important;
+}
+
+.list-group-item {
+  padding-left: 50px !important;
+}
+
+.isActived {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.25) !important;
+  color: white !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.col-open > .sidebar > .dropdown > #dropdown-basic {
+  background: #fff !important;
+  color: black !important;
+  border: 2px #000 solid !important;
+  outline: none !important;
+  width: 200px !important;
+  text-align: left !important;
+}
+
+.dropdown-menu.show {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .media-body > .text-transform {
+    font-size: 0.95rem;
+  }
+  .media-body {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-open {
+    display: flex;
+  }
+
+  .col-hidden {
+    display: none;
+  }
+}

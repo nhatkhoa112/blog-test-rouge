@@ -1,11 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { articleActions } from '../../redux/actions'
+import { Link } from 'react-router-dom'
 import { Navbar, Container, Form, FormControl, Button } from 'react-bootstrap'
 
-export const NavigationBar = () => {
+export const NavigationBar = ({ pageNum, query, setQuery }) => {
+  const dispatch = useDispatch()
+  const handleSearch = e => {
+    e.preventDefault()
+    dispatch(articleActions.getArticles(1, query, '', 1000))
+  }
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#">
+        <Link to="/">
           {' '}
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="3" viewBox="0 0 44 1">
             <line
@@ -38,17 +46,19 @@ export const NavigationBar = () => {
               strokeWidth="1"
             />
           </svg>
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Form className="d-flex">
+          <Form onSubmit={handleSearch} className="d-flex">
             <FormControl
               type="search"
               placeholder="Enter key word"
               className="mr-2 border-radius-left"
               aria-label="Search"
+              onChange={e => setQuery(e.target.value)}
+              value={query}
             />
-            <Button className="border-radius-right" variant="outline-success">
+            <Button onClick={handleSearch} className="border-radius-right" variant="outline-success">
               Search
             </Button>
           </Form>

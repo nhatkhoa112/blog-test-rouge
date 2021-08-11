@@ -11,7 +11,7 @@ const getArticles =
         queryString = `&search=${query}`
       }
       let sortByString = ''
-      if (sortBy) sortByString = `&sort=${sortBy}`
+      if (sortBy) sortByString = `&sortBy=${sortBy}`
       const { data } = await api.get(`blogs?page=${pageNum}&limit=${limit}${queryString}${sortByString}`)
       dispatch({ type: types.GET_ARTICLES_SUCCESS, payload: data })
     } catch (error) {
@@ -19,6 +19,17 @@ const getArticles =
     }
   }
 
+const getArticleById = id => async dispatch => {
+  dispatch({ type: types.GET_ARTICLE_BY_ID_REQUEST, payload: null })
+  try {
+    const { data } = await api.get(`blogs/${id}`)
+    dispatch({ type: types.GET_ARTICLE_BY_ID_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({ type: types.GET_ARTICLE_BY_ID_FAILURE, payload: null })
+  }
+}
+
 export const articleActions = {
-  getArticles
+  getArticles,
+  getArticleById
 }

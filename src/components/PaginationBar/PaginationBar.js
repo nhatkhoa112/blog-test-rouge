@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { articleActions } from '../../redux/actions'
 
-export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
+export const PaginationBar = ({ pageNum, setPageNum, totalPage, sortBy }) => {
   const [disableFirst, setDisableFirst] = useState(pageNum === 1 ? true : false)
   const [disableLast, setDisableLast] = useState(pageNum === totalPage ? true : false)
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
     setPageNum(newPage)
     setDisableFirst(true)
     setDisableLast(false)
-    dispatch(articleActions.getArticles(newPage))
+    dispatch(articleActions.getArticles(newPage, '', sortBy, 10))
   }
   const handleClickOnPrev = e => {
     e.preventDefault()
@@ -25,7 +25,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
     } else {
       setDisableFirst(true)
     }
-    dispatch(articleActions.getArticles(newPage))
+    dispatch(articleActions.getArticles(newPage, '', sortBy, 10))
   }
 
   const handleClickOnLast = e => {
@@ -34,7 +34,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
     setPageNum(newPage)
     setDisableFirst(false)
     setDisableLast(true)
-    dispatch(articleActions.getArticles(newPage))
+    dispatch(articleActions.getArticles(newPage, '', sortBy, 10))
   }
   const handleClickOnNext = e => {
     e.preventDefault()
@@ -46,7 +46,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
     } else {
       setDisableLast(true)
     }
-    dispatch(articleActions.getArticles(newPage))
+    dispatch(articleActions.getArticles(newPage, '', sortBy, 10))
   }
 
   return (
@@ -59,7 +59,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
         </li>
         <li className={disableFirst ? 'page-item disabled' : 'page-item'}>
           <button onClick={handleClickOnPrev} className="page-link">
-            Previous
+            Prev
           </button>
         </li>
         <li className="page-item">
@@ -69,9 +69,7 @@ export const PaginationBar = ({ pageNum, setPageNum, totalPage }) => {
         </li>
         {pageNum > 2 && (
           <li className="page-item">
-            <button active className="page-link">
-              ...
-            </button>
+            <button className="page-link">...</button>
           </li>
         )}
         {pageNum > 1 && pageNum < totalPage && (
