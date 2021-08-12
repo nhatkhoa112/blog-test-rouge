@@ -3,14 +3,17 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Moment from 'react-moment'
 import { articleActions } from '../../redux/actions'
+import { Loading } from '../../components/Loading/Loading'
 
 export const ArticleDetail = () => {
   const dispatch = useDispatch()
-  const { article } = useSelector(state => state.article)
+  const { article, isLoading } = useSelector(state => state.article)
   const { id } = useParams()
   useEffect(() => {
     dispatch(articleActions.getArticleById(id))
   }, [dispatch, id])
+
+  if (isLoading) return <Loading />
   return (
     <div className="article-detail">
       <div className="article__card">
