@@ -1,6 +1,6 @@
 # test-blog-est-rouge
 
-This project is a blog website, made from HTML, CSS and Javascript. Front end made from ReactJS, Redux, Redux-thunk, react-router, and bootstrap
+This project is a test blog website, made from HTML, CSS and Javascript. Front end made from ReactJS, Redux, Redux-thunk, react-router, and bootstrap
 ## User Stories
 The following **required** functionality is completed:
 - [X] User see the article lists in HomePage.
