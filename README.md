@@ -13,6 +13,8 @@ The features will be available in the future
 - [ ] Categories in the article
 
 ## Video Walkthrough
+![test](https://user-images.githubusercontent.com/73689431/129130282-976be96e-8f85-40ac-b3f3-d0ab799eb929.gif)
+
 
 ## Web url: 
 
